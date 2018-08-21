@@ -71,25 +71,18 @@ $(function () {
 							'name':                 'Home (G28)'
 						},
 						{
-							'width':                '2',
+							'width':                '3',
 							'commands':             ['G0 X0 Y0'+ ' F' + settings.feed_rate()],
 							'customClass':          'btn',
 							'additionalClasses':    'btn-primary nowrap',
 							'name':                 'G0 X0 Y0'
 						},
 						{
-							'width':                '3',
+							'width':                '5',
 							'commands':             ['G29'],
 							'customClass':          'btn',
 							'additionalClasses':    'btn-primary nowrap',
-							'name':                 'AutoLevel (G29)'
-						},
-						{
-							'width':                '3',
-							'commands':             ['G222'],
-							'customClass':          'btn',
-							'additionalClasses':    'btn-info nowrap',
-							'name':                 'Init 2Move (G222)'
+							'name':                 'AutoLevel (G29)',
 						},
 
 
@@ -160,7 +153,30 @@ $(function () {
 							'additionalClasses': 'nowrap',
 							'name': 'Front Right',
 							'offset': '2'
-						}
+						},
+
+
+						{
+							'width':                '3',
+							'commands':             ['G222'],
+							'customClass':          'btn',
+							'additionalClasses':    'btn-info nowrap',
+							'name':                 'Init 2Move (G222)'
+						},
+						{
+							'width':                '4',
+							'commands':             ['G297'],
+							'customClass':          'btn',
+							'additionalClasses':    'btn-info nowrap',
+							'name':                 'Probe AutoLevel (G297)'
+						},
+						{
+							'width':                '4',
+							'commands':             ['G503'],
+							'customClass':          'btn',
+							'additionalClasses':    'btn-info nowrap',
+							'name':                 'Eprom Values (G503)'
+						},
 					]
 				}
 			]
