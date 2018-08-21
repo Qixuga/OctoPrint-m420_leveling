@@ -23,7 +23,7 @@ $(function() {
     self.settings = parameters[0];
 
     self.getAdditionalControls = function() {
-      var settings = self.settings.settings.settings.plugins.CR10_Leveling
+      var settings = self.settings.settings.settings.plugins.m420_Leveling;
 
       var baseSettings = [{
         'customClass': '', 'layout': 'horizontal_grid', 'name': 'Bed Leveling', 'children':

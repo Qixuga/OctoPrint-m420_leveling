@@ -22,7 +22,7 @@ from octoprint.settings import settings
 import octoprint.plugin
 
 
-class Cr10_levelingPlugin(octoprint.plugin.AssetPlugin,
+class m420_levelingPlugin(octoprint.plugin.AssetPlugin,
                           octoprint.plugin.TemplatePlugin,
                           octoprint.plugin.SettingsPlugin,
                           octoprint.plugin.StartupPlugin):
@@ -61,7 +61,7 @@ class Cr10_levelingPlugin(octoprint.plugin.AssetPlugin,
                 # version check: github repository
                 type="github_release",
                 user="electr0sheep",
-                repo="OctoPrint-Cr10_leveling",
+                repo="OctoPrint-m420_leveling",
                 current=self._plugin_version,
 
                 # update method: pip
@@ -75,7 +75,7 @@ __plugin_name__ = "Bed Leveling Plugin"
 
 def __plugin_load__():
     global __plugin_implementation__
-    __plugin_implementation__ = Cr10_levelingPlugin()
+    __plugin_implementation__ = m420_levelingPlugin()
 
     global __plugin_hooks__
     __plugin_hooks__ = {

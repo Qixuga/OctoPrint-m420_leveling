@@ -1,4 +1,4 @@
 include README.md
-recursive-include octoprint_CR10_Leveling/templates *
-recursive-include octoprint_CR10_Leveling/translations *
-recursive-include octoprint_CR10_Leveling/static *
+recursive-include octoprint_m420_Leveling/templates *
+recursive-include octoprint_m420_Leveling/translations *
+recursive-include octoprint_m420_Leveling/static *
