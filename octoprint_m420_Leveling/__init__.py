@@ -65,7 +65,7 @@ class m420_levelingPlugin(octoprint.plugin.AssetPlugin,
                 current=self._plugin_version,
 
                 # update method: pip
-                pip="https://github.com/electr0sheep/OctoPrint-Cr10_leveling/archive/{target_version}.zip"
+                pip="https://github.com/Qixuga/OctoPrint-m420_leveling/archive/{target_version}.zip"
             )
         )
 

@@ -14,20 +14,20 @@ plugin_package = "octoprint_m420_Leveling"
 plugin_name = "Bed Leveling"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "2.1.1"
+plugin_version = "2.1.1.1"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
 plugin_description = """Adds bed leveling buttons to the controls tab"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "electr0sheep"
+plugin_author = "Qixuga"
 
 # The plugin's author's mail address.
 plugin_author_email = "electr0sheep@electr0sheep.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/electr0sheep/OctoPrint-Cr10_leveling"
+plugin_url = "https://github.com/Qixuga/OctoPrint-m420_leveling"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
