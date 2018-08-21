@@ -24,7 +24,7 @@ $(function () {
 		self.settings = parameters[0];
 
 		self.getAdditionalControls = function () {
-			var settings = self.settings.settings.settings.plugins.m420_Leveling
+			var settings = self.settings.settings.settings.plugins.m420_Leveling;
 
 			var baseSettings =
 			[
@@ -38,10 +38,14 @@ $(function () {
 							'width': '11',
 							'output': 'WARNING: DO NOT USE CONTROLS WITHOUT HOMING FIRST!!!'
 						},
+
+
 						{
 							'width': '11',
 							'output': 'If you changed settings, make sure you refresh the page'
 						},
+
+
 						{
 							'width': '2',
 							'commands': [],
@@ -57,12 +61,21 @@ $(function () {
 							'name': 'Stop Heat',
 							'offset': '2'
 						},
+
+
 						{
 							'width':                '3',
 							'commands':             ['G28'],
 							'customClass':          'btn',
 							'additionalClasses':    'btn-primary nowrap',
 							'name':                 'Home (G28)'
+						},
+						{
+							'width':                '2',
+							'commands':             ['G0 X0 Y0'+ ' F' + settings.feed_rate()],
+							'customClass':          'btn',
+							'additionalClasses':    'btn-primary nowrap',
+							'name':                 'G0 X0 Y0'
 						},
 						{
 							'width':                '3',
@@ -76,17 +89,18 @@ $(function () {
 							'commands':             ['G222'],
 							'customClass':          'btn',
 							'additionalClasses':    'btn-info nowrap',
-							'name':                 'Init Extr 2Move (G222)',
-							'offset':               '2'
+							'name':                 'Init 2Move (G222)'
 						},
+
+
 						{
 							'width': '2',
 							'commands':
 								[
 									'G90',
-									'G0 Z' + settings.upper_z() + 'F500',
-									'G0 X' + settings.back_left_x() + 'Y' + settings.back_left_y() + 'F' + settings.feed_rate(),
-									'G0 Z' + settings.lower_z() + 'F500'
+									'G0 Z' + settings.upper_z() + ' F500',
+									'G0 X' + settings.back_left_x() + ' Y' + settings.back_left_y() + ' F' + settings.feed_rate(),
+									'G0 Z' + settings.lower_z() + ' F500'
 								],
 							'customClass': 'btn',
 							'additionalClasses': 'nowrap',
@@ -97,9 +111,9 @@ $(function () {
 							'commands':
 								[
 									'G90',
-									'G0 Z' + settings.upper_z() + 'F500',
-									'G0 X' + settings.back_right_x() + 'Y' + settings.back_right_y() + 'F' + settings.feed_rate(),
-									'G0 Z' + settings.lower_z() + 'F500'
+									'G0 Z' + settings.upper_z() + ' F500',
+									'G0 X' + settings.back_right_x() + ' Y' + settings.back_right_y() + ' F' + settings.feed_rate(),
+									'G0 Z' + settings.lower_z() + ' F500'
 								],
 							'customClass': 'btn',
 							'additionalClasses': 'nowrap',
@@ -111,9 +125,9 @@ $(function () {
 							'commands':
 								[
 									'G90',
-									'G0 Z' + settings.upper_z() + 'F500',
-									'G0 X' + settings.center_x() + 'Y' + settings.center_y() + 'F' + settings.feed_rate(),
-									'G0 Z' + settings.lower_z() + 'F500'
+									'G0 Z' + settings.upper_z() + ' F500',
+									'G0 X' + settings.center_x() + ' Y' + settings.center_y() + ' F' + settings.feed_rate(),
+									'G0 Z' + settings.lower_z() + ' F500'
 								],
 							'customClass': 'btn',
 							'additionalClasses': 'nowrap',
@@ -125,9 +139,9 @@ $(function () {
 							'commands':
 								[
 									'G90',
-									'G0 Z' + settings.upper_z() + 'F500',
-									'G0 X' + settings.front_left_x() + 'Y' + settings.front_left_y() + 'F' + settings.feed_rate(),
-									'G0 Z' + settings.lower_z() + 'F500'
+									'G0 Z' + settings.upper_z() + ' F500',
+									'G0 X' + settings.front_left_x() + ' Y' + settings.front_left_y() + ' F' + settings.feed_rate(),
+									'G0 Z' + settings.lower_z() + ' F500'
 								],
 							'customClass': 'btn',
 							'additionalClasses': 'nowrap',
@@ -138,9 +152,9 @@ $(function () {
 							'commands':
 								[
 									'G90',
-									'G0 Z' + settings.upper_z() + 'F500',
-									'G0 X' + settings.front_right_x() + 'Y' + settings.front_right_y() + 'F' + settings.feed_rate(),
-									'G0 Z' + settings.lower_z() + 'F500'
+									'G0 Z' + settings.upper_z() + ' F500',
+									'G0 X' + settings.front_right_x() + ' Y' + settings.front_right_y() + ' F' + settings.feed_rate(),
+									'G0 Z' + settings.lower_z() + ' F500'
 								],
 							'customClass': 'btn',
 							'additionalClasses': 'nowrap',
