@@ -1,6 +1,7 @@
 {#
-OctoPrint CR-10 Leveling Plugin. Allows user to easily level 3D printer.
-Copyright (C) 2018  electr0sheep
+OctoPrint Multec m420 Leveling Plugin. Allows user to easily level 3D printer.
+Copyright (C) 2018 electr0sheep
+Forked and edit 2018 by Qixuga
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
@@ -17,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Email: electr0sheep@electr0sheep.com
 #}
+
+<h2>Multec Multirap m420 - Bed Leveling Plugin</h2>
 
 <div style="background-color: #d9534f; color: #fff; margin: 10px; padding: 10px; border-radius: 4px">
   Warning: Please home your printer before using the buttons, failing to do so
@@ -39,6 +42,7 @@ Email: electr0sheep@electr0sheep.com
     <label class="control-label">Printer:</label>
     <div class="controls">
       <select>
+        <option value="m420">Multec Multirap m420</option>
         <option value="cr-10">CR-10</option>
         <option value="cr-10mini">CR-10 Mini</option>
         <option value="cr-10s4">CR-10 S4</option>
@@ -53,38 +57,38 @@ Email: electr0sheep@electr0sheep.com
     <h3>Apply Heat</h3>
     <label class="control-label">Bed Temp:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.bed_temp">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.bed_temp">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Nozzle Temp:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.nozzle_temp">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.nozzle_temp">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Heat Bed and Nozzle simultaneously:</label>
     <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.CR10_Leveling.heat_simultaneously">
+      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.heat_simultaneously">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Wait for heating to finish (if unchecked, bed and nozzle will heat simultaneously):</label>
     <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.CR10_Leveling.wait_for_heat">
+      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.wait_for_heat">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Play post-heat tune:</label>
     <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.CR10_Leveling.play_tune">
+      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.play_tune">
     </div>
   </div>
   <!--
   <div class="control-group">
     <label class="control-label">Post-heat tune:</label>
     <div class="controls">
-      <input type="number" data-bind="value: settings.plugins.CR10_Leveling.tune">
+      <input type="number" data-bind="value: settings.plugins.m420_Leveling.tune">
     </div>
   </div>
   -->
@@ -93,37 +97,37 @@ Email: electr0sheep@electr0sheep.com
   <div class="control-group">
     <label class="control-label">Feed Rate (how fast the x/y axes move):</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.feed_rate">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.feed_rate">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Lower Z coordinate</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.lower_z">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.lower_z">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Upper Z coordinate</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.upper_z">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.upper_z">
     </div>
   </div>
   <div class="control-group">
     <label for="autolevel_command"><i class="icon icon-info-sign" title="GCODE commands to send to printer to run autoleveling" data-toggle="tooltip"></i>Autolevel GCODE Commands (empty for no Autoleveling)</label>
-    <textarea class="input-block-level" id="autolevel_command" rows="4" data-bind="value: settings.plugins.CR10_Leveling.autolevel"></textarea>
+    <textarea class="input-block-level" id="autolevel_command" rows="4" data-bind="value: settings.plugins.m420_Leveling.autolevel"></textarea>
   </div>
 
   <h3>Front Left</h3>
   <div class="control-group">
     <label class="control-label">X:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.front_left_x">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_x">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Y:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.front_left_y">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_y">
     </div>
   </div>
 
@@ -131,13 +135,13 @@ Email: electr0sheep@electr0sheep.com
   <div class="control-group">
     <label class="control-label">X:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.front_right_x">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_x">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Y:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.front_right_y">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_y">
     </div>
   </div>
 
@@ -145,13 +149,13 @@ Email: electr0sheep@electr0sheep.com
   <div class="control-group">
     <label class="control-label">X:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.back_left_x">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_x">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Y:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.back_left_y">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_y">
     </div>
   </div>
 
@@ -159,13 +163,13 @@ Email: electr0sheep@electr0sheep.com
   <div class="control-group">
     <label class="control-label">X:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.back_right_x">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_x">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Y:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.back_right_y">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_y">
     </div>
   </div>
 
@@ -173,13 +177,13 @@ Email: electr0sheep@electr0sheep.com
   <div class="control-group">
     <label class="control-label">X:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.center_x">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_x">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label">Y:</label>
     <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.CR10_Leveling.center_y">
+      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_y">
     </div>
   </div>
 </form>

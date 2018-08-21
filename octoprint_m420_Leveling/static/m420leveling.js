@@ -1,5 +1,6 @@
-// OctoPrint CR-10 Leveling Plugin. Allows user to easily level 3D printer.
+// OctoPrint Multec Multirap m420 Leveling Plugin. Allows user to easily level 3D printer.
 // Copyright (C) 2018  electr0sheep
+// Forked and edit 2018 by Qixuga
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as published
@@ -23,7 +24,7 @@ $(function() {
     self.settings = parameters[0];
 
     self.getAdditionalControls = function() {
-      var settings = self.settings.settings.settings.plugins.m420_Leveling;
+      var settings = self.settings.settings.settings.plugins.m420_Leveling
 
       var baseSettings = [{
         'customClass': '', 'layout': 'horizontal_grid', 'name': 'Bed Leveling', 'children':
@@ -109,14 +110,14 @@ $(function() {
     }
 
     function waitForHeat(currentSettings) {
-      var settings = self.settings.settings.settings.plugins.CR10_Leveling;
+      var settings = self.settings.settings.settings.plugins.m420_Leveling;
       var heatCommand = currentSettings[0].children[2].commands;
 
       heatCommand.push('M190 S' + settings.bed_temp(), 'M109 S' + settings.nozzle_temp());
     }
 
     function applySimultaneousHeat(currentSettings) {
-      var settings = self.settings.settings.settings.plugins.CR10_Leveling;
+      var settings = self.settings.settings.settings.plugins.m420_Leveling;
       var heatCommand = currentSettings[0].children[2].commands;
 
       heatCommand.unshift('M140 S' + settings.bed_temp(), 'M104 S' + settings.nozzle_temp());

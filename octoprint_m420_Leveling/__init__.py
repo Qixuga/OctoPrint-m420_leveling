@@ -1,5 +1,6 @@
-# OctoPrint CR-10 Leveling Plugin. Allows user to easily level 3D printer.
+# OctoPrint Multec Multirap m420 Leveling Plugin. Allows user to easily level 3D printer.
 # Copyright (C) 2018  electr0sheep
+# Forked and edit 2018 by Qixuga
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published
@@ -33,7 +34,7 @@ class m420_levelingPlugin(octoprint.plugin.AssetPlugin,
         controlList = s.get(["controls"])
 
         for item in controlList:
-            if (item['name'] == 'Bed Leveling'):
+            if (item['name'] == 'Bed Leveling') or (item['name'] == 'Bed Leveling m420'):
                 controlList.remove(item)
 
         s.set(["controls"], controlList)
@@ -50,17 +51,17 @@ class m420_levelingPlugin(octoprint.plugin.AssetPlugin,
         return [dict(type="settings", custom_bindings=False)]
 
     def get_assets(self):
-        return dict(js=["cr10leveling.js"])
+        return dict(js=["m420leveling.js"])
 
     def get_update_information(self):
         return dict(
-            CR10_Leveling=dict(
-                displayName="Bed Leveling Plugin",
+            m420_Leveling=dict(
+                displayName="Bed Leveling m420",
                 displayVersion=self._plugin_version,
 
                 # version check: github repository
                 type="github_release",
-                user="electr0sheep",
+                user="Qixuga",
                 repo="OctoPrint-m420_leveling",
                 current=self._plugin_version,
 
@@ -70,7 +71,7 @@ class m420_levelingPlugin(octoprint.plugin.AssetPlugin,
         )
 
 
-__plugin_name__ = "Bed Leveling Plugin"
+__plugin_name__ = "Bed Leveling m420"
 
 
 def __plugin_load__():
