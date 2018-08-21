@@ -1,5 +1,11 @@
 # Bed Leveling
 
+Special Edition for Multec M420 and other printers.
+
+Forked from: https://github.com/electr0sheep/OctoPrint-Cr10_leveling/
+
+Thank you for your work!
+
 ### Adds bed leveling buttons to the controls tab.
 
 This plugin adds buttons to apply heat to the bed and nozzle, and move the printing head to each of the four corners of the bed, as well as the center of the bed.
@@ -8,8 +14,8 @@ The coordinates and temperatures can all be customized in the plugin’s setting
 
 ## Warning
 
-After turning on your printer, you must first home it before you can safely issuing gcode that causes movement.
-This is true for this plugin, OctoPrint's default movement controls, and even the LCD control on the CR-10.
+After turning on your printer, you must first home it (G28) before you can safely issuing gcode that causes movement.
+This is true for this plugin, OctoPrint's default movement controls.
 
 Failing to do so can cause the printer to move out-of-bounds.
 
@@ -18,7 +24,7 @@ Failing to do so can cause the printer to move out-of-bounds.
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
 or manually using this URL:
 
-    https://github.com/electr0sheep/OctoPrint-Cr10_leveling/archive/master.zip
+    https://github.com/Qixuga/OctoPrint-m420_leveling/archive/master.zip
 
 ## Configuration
 
