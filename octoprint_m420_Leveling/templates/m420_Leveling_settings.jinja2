@@ -14,7 +14,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+along with this program.  If not, see
+<http://www.gnu.org/licenses/>.
 
 Email: electr0sheep@electr0sheep.com
 #}
@@ -22,17 +23,17 @@ Email: electr0sheep@electr0sheep.com
 <h2>Multec Multirap m420 - Bed Leveling Plugin</h2>
 
 <div style="background-color: #d9534f; color: #fff; margin: 10px; padding: 10px; border-radius: 4px">
-  Warning: Please home your printer before using the buttons, failing to do so
-  can cause the printer head to go out-of-bounds. <s>There is a fix for this in the
-  works, but it is not complete yet.</s> 04/19/2018 UPDATE: The OctoPrint core
-  exhibits the same behavior. Therefore, forcing the user to home before using
-  this plugin is beyond its scope. This issue won't be fixed in the forseeable
-  future.
+	Warning: Please home your printer before using the buttons, failing to do so
+	can cause the printer head to go out-of-bounds. <s>There is a fix for this in the
+	works, but it is not complete yet.</s> 04/19/2018 UPDATE: The OctoPrint core
+	exhibits the same behavior. Therefore, forcing the user to home before using
+	this plugin is beyond its scope. This issue won't be fixed in the forseeable
+	future.
 </div>
 <div style="background-color: #5bc0de; color: #fff; margin: 10px; padding: 10px; border-radius: 4px">
-  After saving these settings, please refresh the page to update the control
-  buttons. There is a fix so that you don't have to refresh the page in the
-  works, but it is not complete yet.
+	After saving these settings, please refresh the page to update the control
+	buttons. There is a fix so that you don't have to refresh the page in the
+	works, but it is not complete yet.
 </div>
 
 <!--
@@ -53,137 +54,140 @@ Email: electr0sheep@electr0sheep.com
 </form>
 -->
 <form class="form-horizontal">
-  <div class="control-group">
-    <h3>Apply Heat</h3>
-    <label class="control-label">Bed Temp:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.bed_temp">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Nozzle Temp:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.nozzle_temp">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Heat Bed and Nozzle simultaneously:</label>
-    <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.heat_simultaneously">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Wait for heating to finish (if unchecked, bed and nozzle will heat simultaneously):</label>
-    <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.wait_for_heat">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Play post-heat tune:</label>
-    <div class="controls">
-      <input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.play_tune">
-    </div>
-  </div>
-  <!--
-  <div class="control-group">
-    <label class="control-label">Post-heat tune:</label>
-    <div class="controls">
-      <input type="number" data-bind="value: settings.plugins.m420_Leveling.tune">
-    </div>
-  </div>
-  -->
+	<div class="control-group">
+		<h3>Apply Heat</h3>
+		<label class="control-label">Bed Temp:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.bed_temp">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Nozzle Temp:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.nozzle_temp">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Heat Bed and Nozzle simultaneously:</label>
+		<div class="controls">
+			<input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.heat_simultaneously">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Wait for heating to finish (if unchecked, bed and nozzle will heat simultaneously):</label>
+		<div class="controls">
+			<input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.wait_for_heat">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Play post-heat tune:</label>
+		<div class="controls">
+			<input type="checkbox" data-bind="checked: settings.plugins.m420_Leveling.play_tune">
+		</div>
+	</div>
+	<!--
+	<div class="control-group">
+	  <label class="control-label">Post-heat tune:</label>
+	  <div class="controls">
+		<input type="number" data-bind="value: settings.plugins.m420_Leveling.tune">
+	  </div>
+	</div>
+	-->
 
-  <h3>All Controls</h3>
-  <div class="control-group">
-    <label class="control-label">Feed Rate (how fast the x/y axes move):</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.feed_rate">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Lower Z coordinate</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.lower_z">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Upper Z coordinate</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.upper_z">
-    </div>
-  </div>
-  <div class="control-group">
-    <label for="autolevel_command"><i class="icon icon-info-sign" title="GCODE commands to send to printer to run autoleveling" data-toggle="tooltip"></i>Autolevel GCODE Commands (empty for no Autoleveling)</label>
-    <textarea class="input-block-level" id="autolevel_command" rows="4" data-bind="value: settings.plugins.m420_Leveling.autolevel"></textarea>
-  </div>
+	<h3>All Controls</h3>
+	<div class="control-group">
+		<label class="control-label">Feed Rate (how fast the x/y axes move):</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.feed_rate">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Lower Z coordinate</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.lower_z">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Upper Z coordinate</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.upper_z">
+		</div>
+	</div>
+	<div class="control-group">
+		<label for="autolevel_command"><i class="icon icon-info-sign"
+		                                  title="GCODE commands to send to printer to run autoleveling"
+		                                  data-toggle="tooltip"></i>Autolevel GCODE Commands (empty for no Autoleveling)</label>
+		<textarea class="input-block-level" id="autolevel_command" rows="4"
+		          data-bind="value: settings.plugins.m420_Leveling.autolevel"></textarea>
+	</div>
 
-  <h3>Front Left</h3>
-  <div class="control-group">
-    <label class="control-label">X:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_x">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Y:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_y">
-    </div>
-  </div>
+	<h3>Front Left</h3>
+	<div class="control-group">
+		<label class="control-label">X:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_x">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Y:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_left_y">
+		</div>
+	</div>
 
-  <h3>Front Right</h3>
-  <div class="control-group">
-    <label class="control-label">X:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_x">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Y:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_y">
-    </div>
-  </div>
+	<h3>Front Right</h3>
+	<div class="control-group">
+		<label class="control-label">X:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_x">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Y:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.front_right_y">
+		</div>
+	</div>
 
-  <h3>Back Left</h3>
-  <div class="control-group">
-    <label class="control-label">X:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_x">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Y:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_y">
-    </div>
-  </div>
+	<h3>Back Left</h3>
+	<div class="control-group">
+		<label class="control-label">X:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_x">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Y:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_left_y">
+		</div>
+	</div>
 
-  <h3>Back Right</h3>
-  <div class="control-group">
-    <label class="control-label">X:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_x">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Y:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_y">
-    </div>
-  </div>
+	<h3>Back Right</h3>
+	<div class="control-group">
+		<label class="control-label">X:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_x">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Y:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.back_right_y">
+		</div>
+	</div>
 
-  <h3>Center</h3>
-  <div class="control-group">
-    <label class="control-label">X:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_x">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label">Y:</label>
-    <div class="controls">
-      <input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_y">
-    </div>
-  </div>
+	<h3>Center</h3>
+	<div class="control-group">
+		<label class="control-label">X:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_x">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Y:</label>
+		<div class="controls">
+			<input type="number" step="0.1" data-bind="value: settings.plugins.m420_Leveling.center_y">
+		</div>
+	</div>
 </form>

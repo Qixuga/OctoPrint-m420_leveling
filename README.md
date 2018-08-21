@@ -1,4 +1,4 @@
-# Bed Leveling
+# Bed Leveling m420
 
 Special Edition for Multec Multirap M420 (Dual-Head, Move2 Printhead)and other [Multec](https://www.multec.de) printers.
 
